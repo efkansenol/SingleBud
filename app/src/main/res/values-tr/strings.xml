@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tagline">İki kanalı tek kulaklıkta duy</string>
+
+    <string name="mono_label">Mono ses</string>
+    <string name="status_mono">Sol ve sağ kanal birleştirilip her kulaklığa veriliyor.</string>
+    <string name="status_stereo">Stereo: sol ve sağ kanal ayrı çalıyor.</string>
+
+    <string name="auto_label">Kulaklıkla otomatik</string>
+    <string name="auto_help">Kulaklık bağlanınca mono açılır, çıkarılınca kapanır.</string>
+
+    <string name="method_direct">Hazır: sistem ayarı doğrudan değiştiriliyor</string>
+    <string name="method_shizuku">Hazır: Shizuku kullanılıyor</string>
+    <string name="method_root">Root bulundu: ilk kullanımda izin isteyecek</string>
+    <string name="method_none">Kurulum gerekli</string>
+
+    <string name="setup_help">Android, sıradan uygulamaların mono ses ayarını değiştirmesine izin vermiyor. İzin vermek için bir yol seç:\n\n1. Shizuku (bilgisayarsız, Android 11+): Shizuku uygulamasını kur, kablosuz hata ayıklama ile başlat, sonra aşağıdaki düğmeyle izin ver. Telefon her yeniden başladığında Shizuku\'yu tekrar başlatmak gerekir.\n\n2. Legacy sürüm (bir kez bilgisayarla): SingleBud-legacy.apk dosyasını şu komutla kur:\nadb install --bypass-low-target-sdk-block SingleBud-legacy.apk\n\n3. Root: varsa otomatik kullanılır.\n\nBunların hiçbiri yoksa mono sesi Android\'in erişilebilirlik ayarlarından elle açıp kapatabilirsin.</string>
+
+    <string name="btn_shizuku_open">Shizuku\'yu aç</string>
+    <string name="btn_shizuku_grant">Shizuku izni ver</string>
+    <string name="btn_accessibility">Erişilebilirlik ayarlarını aç</string>
+    <string name="tile_hint">İpucu: Tek dokunuşla değiştirmek için SingleBud kutucuğunu Hızlı Ayarlar\'a ekle.</string>
+
+    <string name="toast_failed">Mono ses değiştirilemedi. SingleBud\'da kurulumu tamamla.</string>
+    <string name="toast_shizuku_old">Bu Shizuku sürümü çok eski. Lütfen güncelle.</string>
+    <string name="toast_shizuku_start">Shizuku\'yu başlat, sonra geri dön.</string>
+
+    <string name="tile_label">Mono ses</string>
+    <string name="tile_on">Açık</string>
+    <string name="tile_off">Kapalı</string>
+
+    <string name="notif_channel">Otomatik mod</string>
+    <string name="notif_title">SingleBud otomatik mod</string>
+    <string name="notif_waiting">Kulaklık bekleniyor</string>
+    <string name="notif_mono">Kulaklık bağlı: mono</string>
+    <string name="notif_stereo">Kulaklık yok: stereo</string>
+    <string name="notif_failed">Mono ses değiştirilemedi. Kurulum için SingleBud\'u aç.</string>
+</resources>

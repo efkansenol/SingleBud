@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">SingleBud</string>
+    <string name="tagline">Hear both channels in one earbud</string>
+
+    <string name="mono_label">Mono audio</string>
+    <string name="status_mono">Left and right are mixed into every earbud.</string>
+    <string name="status_stereo">Stereo: left and right play separately.</string>
+
+    <string name="auto_label">Automatic with headphones</string>
+    <string name="auto_help">Mono turns on when headphones connect and off when they disconnect.</string>
+
+    <string name="method_direct">Ready: writes the system setting directly</string>
+    <string name="method_shizuku">Ready: using Shizuku</string>
+    <string name="method_root">Root found: it will ask for access on first use</string>
+    <string name="method_none">Setup needed</string>
+
+    <string name="setup_help">Android does not let ordinary apps change the mono audio setting. Pick one way to allow it:\n\n1. Shizuku (no computer, Android 11+): install the Shizuku app, start it with wireless debugging, then tap the button below to grant access. Shizuku has to be started again after each reboot.\n\n2. Legacy build (computer once): install SingleBud-legacy.apk with\nadb install --bypass-low-target-sdk-block SingleBud-legacy.apk\n\n3. Root: used automatically when available.\n\nWithout any of these you can still switch mono audio by hand in Android\'s accessibility settings.</string>
+
+    <string name="btn_shizuku_open">Open Shizuku</string>
+    <string name="btn_shizuku_grant">Grant Shizuku access</string>
+    <string name="btn_accessibility">Open accessibility settings</string>
+    <string name="tile_hint">Tip: add the SingleBud tile to Quick Settings to switch with one tap.</string>
+
+    <string name="toast_failed">Could not change mono audio. Finish the setup in SingleBud.</string>
+    <string name="toast_shizuku_old">This Shizuku version is too old. Please update it.</string>
+    <string name="toast_shizuku_start">Start Shizuku, then come back.</string>
+
+    <string name="tile_label">Mono audio</string>
+    <string name="tile_on">On</string>
+    <string name="tile_off">Off</string>
+
+    <string name="notif_channel">Automatic mode</string>
+    <string name="notif_title">SingleBud automatic mode</string>
+    <string name="notif_waiting">Waiting for headphones</string>
+    <string name="notif_mono">Headphones connected: mono</string>
+    <string name="notif_stereo">No headphones: stereo</string>
+    <string name="notif_failed">Could not change mono audio. Open SingleBud to finish setup.</string>
+</resources>
