@@ -35,4 +35,24 @@
     <string name="notif_mono">Kulaklık bağlı: mono</string>
     <string name="notif_stereo">Kulaklık yok: stereo</string>
     <string name="notif_failed">Mono ses değiştirilemedi. Kurulum için SingleBud\'u aç.</string>
+
+    <string name="test_button">Sol / sağ testi</string>
+    <string name="test_hint">Önce soldan kalın, sonra sağdan ince bir ses çalar. Mono açıkken tek kulaklıkta ikisini de duyarsın.</string>
+    <string name="test_left">Sol kanal çalıyor (kalın ses)</string>
+    <string name="test_right">Sağ kanal çalıyor (ince ses)</string>
+    <string name="toast_test_failed">Test sesi çalınamadı.</string>
+
+    <string name="balance_label">Sol / sağ denge</string>
+    <string name="balance_left">Sol</string>
+    <string name="balance_right">Sağ</string>
+    <string name="balance_center">Ortala</string>
+    <string name="balance_help">Sesi bir tarafa kaydırır; örneğin bir kulağın daha az duyuyorsa.</string>
+    <string name="toast_balance_failed">Denge değiştirilemedi.</string>
+
+    <string name="devices_title">Mono kullanılacak cihazlar</string>
+    <string name="devices_help">Stereo kalmasını istediğin cihazın işaretini kaldır; örneğin araba ya da iki kulağına taktığın kulaklık.</string>
+    <string name="devices_empty">Henüz kulaklık görülmedi. Bağlandıklarında burada listelenir.</string>
+    <string name="device_wired">Kablolu kulaklık</string>
+    <string name="device_connected">%1$s (bağlı)</string>
+    <string name="notif_stereo_device">Bu cihaz stereo olarak ayarlı</string>
 </resources>

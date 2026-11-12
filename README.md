@@ -14,6 +14,9 @@ SingleBud sesi kendisi işlemez. Android'in sistem genelindeki mono ses ayarın�
 - Ana ekranda mono ses anahtarı
 - Hızlı Ayarlar kutucuğu (tek dokunuşla aç/kapat)
 - Otomatik mod: kulaklık bağlanınca mono, çıkarılınca tekrar stereo
+- Cihaza göre kural: hangi kulaklık ya da Bluetooth cihazında mono kullanılacağını seçme
+- Sol / sağ denge ayarı (Android 10+, `master_balance`)
+- Sol / sağ test sesi
 
 ## Kurulum
 

@@ -16,14 +16,14 @@ import android.os.IBinder
 import rikka.shizuku.Shizuku
 
 /**
- * Keeps mono audio in step with headphones: mono while a headset is connected,
- * stereo again once it is gone (so the phone speakers stay stereo).
+ * Keeps mono audio in step with headphones: mono while a headset is connected
+ * (unless the user marked that device as stereo), stereo again once it is gone.
  */
 class AutoMonoService : Service() {
 
     private lateinit var audio: AudioManager
 
-    /** Last headset state that was applied successfully; null means "retry". */
+    /** Last mono state that was applied successfully; null means "retry". */
     private var applied: Boolean? = null
 
     private val deviceCallback = object : AudioDeviceCallback() {
@@ -65,22 +65,28 @@ class AutoMonoService : Service() {
         super.onDestroy()
     }
 
-    private fun headsetConnected(): Boolean =
-        audio.getDevices(AudioManager.GET_DEVICES_OUTPUTS).any { it.type in HEADSET_TYPES }
-
     private fun evaluate() {
-        val connected = headsetConnected()
-        if (connected == applied) return
-        applied = connected
-        MonoController.setMonoAsync(this, connected) { ok ->
-            if (!ok) applied = null
-            val text = when {
-                !ok -> R.string.notif_failed
-                connected -> R.string.notif_mono
-                else -> R.string.notif_stereo
-            }
-            notificationManager().notify(NOTIFICATION_ID, buildNotification(getString(text)))
+        val connected = Devices.connectedKeys(this)
+        Devices.remember(this, connected)
+        val mono = Devices.wantsMono(this, connected)
+        val okText = when {
+            mono -> R.string.notif_mono
+            connected.isEmpty() -> R.string.notif_stereo
+            else -> R.string.notif_stereo_device
         }
+        if (mono == applied) {
+            updateNotification(okText)
+            return
+        }
+        applied = mono
+        MonoController.setMonoAsync(this, mono) { ok ->
+            if (!ok) applied = null
+            updateNotification(if (ok) okText else R.string.notif_failed)
+        }
+    }
+
+    private fun updateNotification(textRes: Int) {
+        notificationManager().notify(NOTIFICATION_ID, buildNotification(getString(textRes)))
     }
 
     private fun notificationManager() =
@@ -131,15 +137,7 @@ class AutoMonoService : Service() {
         private const val CHANNEL_ID = "auto"
         private const val NOTIFICATION_ID = 1
 
-        private val HEADSET_TYPES = setOf(
-            AudioDeviceInfo.TYPE_BLUETOOTH_A2DP,
-            AudioDeviceInfo.TYPE_BLUETOOTH_SCO,
-            AudioDeviceInfo.TYPE_WIRED_HEADSET,
-            AudioDeviceInfo.TYPE_WIRED_HEADPHONES,
-            22, // TYPE_USB_HEADSET (API 26)
-            26  // TYPE_BLE_HEADSET (API 31)
-        )
-
+        /** Starts the service, or makes a running one re-check its rules. */
         fun start(ctx: Context) {
             val intent = Intent(ctx, AutoMonoService::class.java)
             try {

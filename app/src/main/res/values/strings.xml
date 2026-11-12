@@ -36,4 +36,24 @@
     <string name="notif_mono">Headphones connected: mono</string>
     <string name="notif_stereo">No headphones: stereo</string>
     <string name="notif_failed">Could not change mono audio. Open SingleBud to finish setup.</string>
+
+    <string name="test_button">Left / right test</string>
+    <string name="test_hint">Plays a low tone on the left, then a high tone on the right. With mono on you hear both in one earbud.</string>
+    <string name="test_left">Left channel playing (low tone)</string>
+    <string name="test_right">Right channel playing (high tone)</string>
+    <string name="toast_test_failed">Could not play the test sound.</string>
+
+    <string name="balance_label">Left / right balance</string>
+    <string name="balance_left">Left</string>
+    <string name="balance_right">Right</string>
+    <string name="balance_center">Center</string>
+    <string name="balance_help">Shift the sound toward one side, for example if one ear hears less.</string>
+    <string name="toast_balance_failed">Could not change the balance.</string>
+
+    <string name="devices_title">Devices that use mono</string>
+    <string name="devices_help">Untick a device to keep it in stereo, such as a car or headphones you wear on both ears.</string>
+    <string name="devices_empty">No headphones seen yet. They appear here once connected.</string>
+    <string name="device_wired">Wired headphones</string>
+    <string name="device_connected">%1$s (connected)</string>
+    <string name="notif_stereo_device">This device is set to stereo</string>
 </resources>
